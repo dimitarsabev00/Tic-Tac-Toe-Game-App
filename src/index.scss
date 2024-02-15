@@ -1,5 +1,13 @@
-body {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #000000;
+}
+
+body {
   background-color: #0f1b21;
-  overflow: hidden;
 }
