@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Game App
 
-### Open Project - [tic-tac-toe-game-app-a.vercel.app/](tic-tac-toe-game-app-a.vercel.app/)
+### Open Project - [https://tic-tac-toe-game-app-a.vercel.app/](https://tic-tac-toe-game-app-a.vercel.app/)
 
 ## Available Scripts
 
