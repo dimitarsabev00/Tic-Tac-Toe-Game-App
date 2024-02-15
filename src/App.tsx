@@ -1,6 +1,6 @@
 import "./App.scss";
 
-import { Board } from "./components";
+import { Board, Button } from "./components";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
         Tic Tac Toe Game <span>App</span>
       </h1>
       <Board />
+      <Button title="Reset" />
     </div>
   );
 };
