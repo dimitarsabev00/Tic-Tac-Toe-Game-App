@@ -6,12 +6,16 @@
   border: 4px solid #0f1b21;
   border-radius: 12px;
   cursor: pointer;
+  position: relative;
 
   img {
-    margin: 50px;
     max-width: 100%;
     height: auto;
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
