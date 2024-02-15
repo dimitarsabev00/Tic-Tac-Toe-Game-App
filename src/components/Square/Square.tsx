@@ -8,7 +8,7 @@ interface SquareProps {
   o: number;
   disableClick: boolean;
   winner: string | null;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 const Square: React.FC<SquareProps> = ({
@@ -21,7 +21,7 @@ const Square: React.FC<SquareProps> = ({
   return (
     <div
       className="square-container"
-      onClick={!disableClick ? onClick : null}
+      onClick={!disableClick ? onClick : undefined}
       style={{ pointerEvents: winner ? "none" : "auto" }}
     >
       {x ? (
