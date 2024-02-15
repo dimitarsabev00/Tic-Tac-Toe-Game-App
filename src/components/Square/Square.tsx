@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import circle_icon from "../../assets/circle.png";
 import cross_icon from "../../assets/cross.png";
@@ -18,11 +18,37 @@ const Square: React.FC<SquareProps> = ({
   onClick,
   disableClick,
 }) => {
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (!disableClick) {
+      setTouchStartX(event.touches[0].clientX);
+      setTouchStartY(event.touches[0].clientY);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!disableClick && touchStartX !== null && touchStartY !== null) {
+      const touchEndX = touchStartX;
+      const touchEndY = touchStartY;
+      const deltaX = Math.abs(touchEndX - touchStartX);
+      const deltaY = Math.abs(touchEndY - touchStartY);
+
+      if (deltaX < 10 && deltaY < 10) {
+        onClick(); // Trigger onClick event if touch movement is within a small threshold
+      }
+    }
+
+    setTouchStartX(null);
+    setTouchStartY(null);
+  };
   return (
     <div
-      className="square-container"
+      className={`square-container ${winner ? "win" : ""}`}
       onClick={!disableClick ? onClick : undefined}
-      style={{ pointerEvents: winner ? "none" : "auto" }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {x ? (
         <img src={cross_icon} alt="cross" />
