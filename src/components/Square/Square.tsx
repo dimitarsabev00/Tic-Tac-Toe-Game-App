@@ -51,9 +51,17 @@ const Square: React.FC<SquareProps> = ({
       onTouchEnd={handleTouchEnd}
     >
       {x ? (
-        <img src={cross_icon} alt="cross" />
+        <img
+          src={cross_icon}
+          alt="cross"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       ) : o ? (
-        <img src={circle_icon} alt="circle" />
+        <img
+          src={circle_icon}
+          alt="circle"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       ) : (
         ""
       )}
