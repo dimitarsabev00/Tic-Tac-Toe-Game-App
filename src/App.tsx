@@ -9,7 +9,6 @@ const App = () => {
         Tic Tac Toe Game <span>App</span>
       </h1>
       <Board />
-      <Button title="Reset" />
     </div>
   );
 };

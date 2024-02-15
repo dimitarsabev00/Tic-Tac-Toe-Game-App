@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.scss";
 import circle_icon from "../../assets/circle.png";
 import cross_icon from "../../assets/cross.png";
+import { Button } from "..";
 
 const Board: React.FC = () => {
   const [data, setData] = useState<Array<string>>(Array(9).fill(""));
@@ -18,7 +19,12 @@ const Board: React.FC = () => {
     setCount(count + 1);
   };
 
+  const handleReset = () =>{
+    setLock(false)
+    setData(Array(9).fill(""))
+  }
   return (
+    <>
     <div className="container-board">
       <div className="row1">
         {[0, 1, 2].map((index) => (
@@ -57,6 +63,9 @@ const Board: React.FC = () => {
         ))}
       </div>
     </div>
+      <Button title="Reset" onClick={handleReset}/>
+    </>
+
   );
 };
 
