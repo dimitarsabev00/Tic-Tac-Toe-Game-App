@@ -1,0 +1,15 @@
+.container-board {
+  height: 600px;
+  width: 564px;
+  display: flex;
+  margin: auto;
+  .boxes {
+    display: flex;
+    height: 180px;
+    width: 180px;
+    background-color: #1f3540;
+    border: 4px solid #0f1b21;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+}
